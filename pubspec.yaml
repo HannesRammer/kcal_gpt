@@ -1,0 +1,21 @@
+name: kcal_gpt
+description: A calorie counter app powered by ChatGPT API
+version: 1.0.0
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sqflite: ^2.2.8+4
+  http: ^0.13.4
+  google_mobile_ads: ^3.0.0
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
