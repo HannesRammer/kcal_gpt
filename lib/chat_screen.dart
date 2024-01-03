@@ -35,7 +35,11 @@ class ChatScreenState extends State<ChatScreen> {
     });
 
     final apiResponse = await _fetchResponse(message);
+    print('API Response: $apiResponse'); // Debugging message
+
     final foodItems = parseResponse(apiResponse); // Parse the response
+
+    print('Parsed food items: ${foodItems}'); // Debugging message
 
     setState(() {
       _messages.insert(
@@ -106,9 +110,13 @@ For each food item mentioned, provide a detailed calorie estimate in a structure
     try {
       final List<dynamic> itemsList = response['items'];
       totalCalories = int.tryParse(response['totalCalories'].toString()) ?? 0;
-      return itemsList
-          .map<FoodItem>((item) => FoodItem.fromJson(item))
-          .toList();
+      final parsedItems =
+          itemsList.map<FoodItem>((item) => FoodItem.fromJson(item)).toList();
+
+      print('Parsed items: ${response}'); // Debugging message
+      print('Parsed items: ${parsedItems}'); // Debugging message
+
+      return parsedItems;
     } catch (e) {
       print("Error parsing response: $e");
       return [];
@@ -135,7 +143,6 @@ For each food item mentioned, provide a detailed calorie estimate in a structure
     );
   }
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Calorie Estimator Chat')),
@@ -252,6 +259,10 @@ For each food item mentioned, provide a detailed calorie estimate in a structure
         ],
       ),
     );
+
+    print('Number of food items: ${foodItems.length}'); // Debugging message
+    print(
+        'Number of rows in the data table: ${rows.length}'); // Debugging message
 
     return rows;
   }

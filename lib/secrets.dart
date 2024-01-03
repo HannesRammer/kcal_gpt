@@ -8,5 +8,5 @@ class Secrets {
 
   // Replace 'YourOpenAIKey' with your actual OpenAI API key
   static const String chatGPTApiKey =
-      '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';
+      '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';
 }
