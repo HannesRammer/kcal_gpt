@@ -1,17 +1,18 @@
 name: kcalgpt_app
 description: A Flutter app for KcalGPT
-version: 1.0.0
+version: 1.0.3+8
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"  # Specify the Flutter SDK version
+  sdk: '>=3.1.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^0.13.3
-  clipboard: ^0.1.2+8  # Check for the latest version on pub.dev
+  http: ^1.1.0
+  clipboard: ^0.1.2+8 # Check for the latest version on pub.dev
   google_mobile_ads: ^4.0.0
-  intl: ^0.17.0
+  provider: ^5.0.0
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
